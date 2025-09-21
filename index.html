@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Friendly Searchable Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      margin: 10px;
+    }
+
+    /* 🔎 Search Box */
+    #searchBox {
+      margin: 10px 0;
+      width: 90%;
+      max-width: 350px;
+      height: 36px;
+      font-size: 14px;
+      padding: 5px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* 📋 Table */
+    .table-container {
+      width: 100%;
+      overflow-x: auto; /* ✅ Makes table scrollable on small screens */
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 6px;
+      text-align: center;
+      white-space: nowrap; /* ✅ Prevent text breaking in small screens */
+    }
+
+    th {
+      background: #f2f2f2;
+    }
+
+    /* 🔹 Mobile Adjustments */
+    @media screen and (max-width: 600px) {
+      body {
+        font-size: 12px;
+      }
+      #searchBox {
+        font-size: 12px;
+        height: 32px;
+      }
+      table {
+        font-size: 11px;
+      }
+      th, td {
+        padding: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <center><h2>CHARAK PHARMA PVT. LTD.</h2>
+  <h3>PRICE LIST PHYTONOVA - 21-07-2025</h3>
+
+  <!-- 🔎 Search Box -->
+  <input type="text" id="searchBox" placeholder="Search product..." onkeyup="searchTable()"></center>
+
+  <!-- 📋 Table inside scrollable container -->
+  <div class="table-container">
+    <table id="productTable">
+      <thead>
+        <tr>
+          <th>HSN Code</th>
+          <th>Product</th>
+          <th>CGST %</th>
+          <th>SGST %</th>
+          <th>MRP</th>
+          <th>Trade Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>30049011</td>
+          <td>ALSAREX TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>211.00</td>
+          <td>150.7</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>APTIZOOOM SY200</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>135.00</td>
+          <td>96.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>ARJUNIN CA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>149.00</td>
+          <td>106.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>ARTHRELLA OIL 50 ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>83.00</td>
+          <td>59.29</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>ARTHRELLA OINT<br>30GMS</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>130.00</td>
+          <td>92.84</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>ARTHRELLA TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>157.00</td>
+          <td>112.14</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>AUTOZYME SYRUP<br>200ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>94.00</td>
+          <td>67.14</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>AUTOZYME TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>110.00</td>
+          <td>78.56</td>
+        </tr>
+        <tr>
+          <td>21069099</td>
+          <td>CALSKEL NUTRA TA30</td>
+          <td>9.00</td>
+          <td>9.00</td>
+          <td>209.00</td>
+          <td>141.69</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>CEPHAGRAINE DR15</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>73.00</td>
+          <td>52.14</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>CEPHAGRAINE SET</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>205.00</td>
+          <td>146.41</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>CEPHAGRAINE TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>203.00</td>
+          <td>145</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>COGNIUM 200ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>181.00</td>
+          <td>129.28</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>COGNIUM TA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>150.00</td>
+          <td>107.16</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>CYTOZEN CA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>170.00</td>
+          <td>121.42</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>CYTOZEN FORTE<br>SYRUP 200ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>205.00</td>
+          <td>146.42</td>
+        </tr>
+        <tr>
+          <td>33051090</td>
+          <td>DANIL ANTI DANDRUFF<br>SHAMPOO 100ML</td>
+          <td>9.00</td>
+          <td>9.00</td>
+          <td>270.00</td>
+          <td>183.05</td>
+        </tr>
+        <tr>
+          <td>33059011</td>
+          <td>DANIL OIL</td>
+          <td>9.00</td>
+          <td>9.00</td>
+          <td>258.00</td>
+          <td>174.91</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>EVENSHADE CREAM<br>30GMS</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>139.00</td>
+          <td>99.27</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>FORTYFITT TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>150.00</td>
+          <td>107.14</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>IMMUBUILD SYRUP<br>200ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>100.00</td>
+          <td>71.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>IMMUBUILD TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>108.00</td>
+          <td>77.15</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>IMUPSORA OIL<br>50ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>115.00</td>
+          <td>82.14</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>IMUPSORA OINT<br>50GMS</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>149.00</td>
+          <td>106.43</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>IMUPSORA TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>158.00</td>
+          <td>112.88</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>KOFOL IMMUNITY<br>TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>220.00</td>
+          <td>157.14</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>KOFOL SY100</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>110.00</td>
+          <td>78.57</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>KOFOL SY200</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>177.00</td>
+          <td>126.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>MINISCAR CREAM<br>30GMS</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>125.00</td>
+          <td>89.29</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>OSTOLIEF TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>152.00</td>
+          <td>108.56</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>PALLRYWYN<br>FORTE TA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>236.00</td>
+          <td>168.61</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>PIGMENTO OINT<br>50GMS</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>158.00</td>
+          <td>112.86</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>PIGMENTO TA200</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>649.00</td>
+          <td>463.59</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>PIGMENTO TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>252.00</td>
+          <td>179.99</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>PILIEF OINTMENT<br>20GM</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>105.00</td>
+          <td>75.01</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>PILIEF TABS TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>197.00</td>
+          <td>140.71</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>REGULAX FORTE<br>FTA40</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>103.00</td>
+          <td>73.57</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>RYMANYL CA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>124.00</td>
+          <td>88.56</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>RYMANYL LI50</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>93.00</td>
+          <td>66.43</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>SKINELLE CR20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>86.00</td>
+          <td>61.44</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>SPASMA SY200</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>138.00</td>
+          <td>98.58</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>STOP-IBS TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>312.00</td>
+          <td>222.84</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>SUMENTA TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>156.00</td>
+          <td>111.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>TAKZEMA OIN30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>119.00</td>
+          <td>85.01</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>TAKZEMA TA30</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>145.00</td>
+          <td>103.57</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>URTIPLEX 100ML</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>185.00</td>
+          <td>132.13</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>URTIPLEX CA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>200.00</td>
+          <td>142.84
+</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>VIGOMAX FORTE<br>TA20</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>245.00</td>
+          <td>174.98</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>VIGOROLL JE450</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>320.00</td>
+          <td>228.54</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>SHALLAKI + TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>299.00</td>
+          <td>213.57</td>
+        </tr>
+		<tr>
+          <td>30049011</td>
+          <td>SHATAVARI+ TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>289.00</td>
+          <td>206.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>GOKSHUR + TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>289.00</td>
+          <td>206.43</td>
+        </tr>
+        <tr>
+          <td>30049011</td>
+          <td>ASHWAGANDHA +TA60</td>
+          <td>6.00</td>
+          <td>6.00</td>
+          <td>320.00</td>
+          <td>228.57</td>
+        </tr>
+        
+		
+  </div>
+
+  <script>
+    function searchTable() {
+      let input = document.getElementById("searchBox").value.toLowerCase();
+      let table = document.getElementById("productTable");
+      let rows = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < rows.length; i++) { // skip header row
+        let cells = rows[i].getElementsByTagName("td");
+        let found = false;
+        for (let j = 0; j < cells.length; j++) {
+          if (cells[j].innerText.toLowerCase().includes(input)) {
+            found = true;
+            break;
+          }
+        }
+        rows[i].style.display = found ? "" : "none"; // ✅ Show only matching rows
+      }
+    }
+  </script>
+
+</body>
+</html>
